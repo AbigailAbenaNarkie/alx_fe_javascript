@@ -13,12 +13,12 @@ const formContainer = document.getElementById('formContainer');
 // Function to display a random quote
 function showRandomQuote() {
   if (quotes.length === 0) {
-    quoteDisplay.textContent = "No quotes available. Please add some!";
+    quoteDisplay.innerHTML = "<em>No quotes available. Please add some!</em>";
     return;
   }
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[randomIndex];
-  quoteDisplay.textContent = `"${quote.text}" — ${quote.category}`;
+  quoteDisplay.innerHTML = `<q>${quote.text}</q> — <strong>${quote.category}</strong>`;
 }
 
 // Function to add a new quote
