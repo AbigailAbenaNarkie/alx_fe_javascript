@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Quote Generator</title>
+  <title>Dynamic Quote Generator with Storage & Sync</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 30px;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
     }
-    #quoteDisplay {
-      margin-bottom: 20px;
+    #quoteDisplay q {
       font-style: italic;
-      font-size: 1.2em;
+      color: #333;
     }
-    input, select, button {
-      margin: 5px 0;
-      padding: 5px 10px;
-      font-size: 1em;
+    #quoteDisplay strong {
+      color: #FF6565;
     }
-    #formContainer {
-      margin-top: 20px;
+    input, button, select {
+      margin-top: 5px;
+      margin-right: 5px;
+      padding: 5px;
     }
   </style>
 </head>
@@ -28,15 +29,34 @@
   <h1>Dynamic Quote Generator</h1>
 
   <!-- Display Area for Quotes -->
-  <div id="quoteDisplay"></div>
+  <div id="quoteDisplay" style="margin-bottom: 20px;"></div>
+
+  <!-- Category Filter -->
+  <div style="margin-bottom: 20px;">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterQuotes()">
+      <option value="all">All Categories</option>
+      <!-- Categories will be dynamically populated -->
+    </select>
+  </div>
 
   <!-- Button to Show New Quote -->
   <button id="newQuote">Show New Quote</button>
 
-  <!-- Container for Add Quote Form, Category Filter, and Import/Export -->
-  <div id="formContainer"></div>
+  <!-- Container for Dynamic Form -->
+  <div id="formContainer" style="margin-top: 20px;"></div>
 
-  <!-- Script -->
+  <!-- JSON Import/Export -->
+  <div style="margin-top: 20px;">
+    <button id="exportBtn">Export Quotes as JSON</button>
+    <input type="file" id="importFile" accept=".json" />
+  </div>
+
+  <!-- Manual Server Sync -->
+  <div style="margin-top: 20px;">
+    <button id="syncBtn">Sync with Server</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
