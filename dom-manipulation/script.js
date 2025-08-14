@@ -152,7 +152,7 @@ async function fetchQuotesFromServer() {
 
     saveQuotes();
     showRandomQuote();
-    console.log('Quotes synced from server.');
+    console.log("Quotes synced with server!"); // ✅ Correct place
   } catch (err) {
     console.error('Error fetching from server:', err);
   }
@@ -178,6 +178,7 @@ async function syncQuotes() {
   await fetchQuotesFromServer();
   await postQuotesToServer();
 }
+
 // Manual sync button
 if (syncBtn) {
   syncBtn.addEventListener('click', syncQuotes);
