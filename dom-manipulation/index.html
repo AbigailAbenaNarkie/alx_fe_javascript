@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Quote Generator with Storage</title>
+  <title>Dynamic Quote Generator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
+      margin: 30px;
     }
-    #quoteDisplay q {
+    #quoteDisplay {
+      margin-bottom: 20px;
       font-style: italic;
-      color: #333;
+      font-size: 1.2em;
     }
-    #quoteDisplay strong {
-      color: #FF6565;
+    input, select, button {
+      margin: 5px 0;
+      padding: 8px;
+      font-size: 1em;
     }
-    input, button {
-      margin-top: 5px;
-      margin-right: 5px;
-      padding: 5px;
+    #formContainer {
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -29,19 +28,13 @@
   <h1>Dynamic Quote Generator</h1>
 
   <!-- Display Area for Quotes -->
-  <div id="quoteDisplay" style="margin-bottom: 20px;"></div>
+  <div id="quoteDisplay"></div>
 
   <!-- Button to Show New Quote -->
   <button id="newQuote">Show New Quote</button>
 
   <!-- Container for Dynamic Form -->
-  <div id="formContainer" style="margin-top: 20px;"></div>
-
-  <!-- JSON Import/Export -->
-  <div style="margin-top: 20px;">
-    <button id="exportBtn">Export Quotes as JSON</button>
-    <input type="file" id="importFile" accept=".json" />
-  </div>
+  <div id="formContainer"></div>
 
   <script src="script.js"></script>
 </body>
